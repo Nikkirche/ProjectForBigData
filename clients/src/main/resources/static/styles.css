@@ -1,0 +1,46 @@
+.tag{
+    list-style: none;
+    display: inline;
+}
+
+ul.cboxtags {
+    list-style: none;
+    padding: 0px;
+}
+ul.cboxtags li{
+  display: inline;
+}
+ul.cboxtags li label{
+    display: inline-block;
+    background-color: rgba(255, 255, 255, .9);
+    border: 1px solid #ADB5BD;
+    color: #ADB5BD;
+    border-radius: 5px;
+    white-space: nowrap;
+    margin: 3px 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: all .2s;
+}
+
+ul.cboxtags li label {
+    padding: 2px 8px;
+    cursor: pointer;
+}
+ul.cboxtags li input[type="checkbox"]:checked + label {
+    border: 1px solid #FFC107;
+    background-color: #FFC107;
+    color: #000000;
+    transition: all .2s;
+}
+ul.cboxtags li input[type="checkbox"] {
+  display: absolute;
+}
+ul.cboxtags li input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+}
