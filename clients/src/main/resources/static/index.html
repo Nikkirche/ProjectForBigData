@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="">
 <head>
     <title>Заявитель</title>
     <meta charset="UTF-8">
@@ -7,10 +7,17 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="app.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
     <link rel="stylesheet" href="docsupport/style.css">
     <link rel="stylesheet" href="docsupport/prism.css">
     <link rel="stylesheet" href="chosen.css">
@@ -19,126 +26,156 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="adminPage.html">Администрация</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">Заявитель</a>
-            </li>
-        </ul>
-    </nav>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="adminPage.html">Администрация</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="index.html">Заявитель</a>
+        </li>
+    </ul>
+</nav>
 
-    <div class="m-5 p-4 mx-auto shadow rounded-lg" style="width:500px">
-        <p class="h4">Пожалуйста, заполните форму:</p><br>
-        <form class="was-validated" action="" novalidate>
-            <div class="form-group">
-                <label for="adminDistrict">Район администрации:</label>
-                <select class="custom-select" id="adminDistrict" required>
-                    <option disabled selected value="">Выберите район</option>
-                    <option value="Адмиралтейский район">Адмиралтейский район</option>
-                    <option value="Василеостровский район">Василеостровский район</option>
-                    <option value="Выборгский район">Выборгский район</option>
-                    <option value="Калининский район">Калининский район</option>
-                    <option value="Кировский район">Кировский район</option>
-                    <option value="Колпинский район">Колпинский район</option>
-                    <option value="Красногвардейский район">Красногвардейский район</option>
-                    <option value="Красносельский район">Красносельский район</option>
-                    <option value="Кронштадтcкий район">Кронштадтcкий район</option>
-                    <option value="Курортный район">Курортный район</option>
-                    <option value="Московский район">Московский район</option>
-                    <option value="Невский район">Невский район</option>
-                    <option value="Петроградский район">Петроградский район</option>
-                    <option value="Петродворцовый райо">Петродворцовый район</option>
-                    <option value="Приморский район">Приморский район</option>
-                    <option value="Пушкинский район">Пушкинский район</option>
-                    <option value="Фрунзенский район">Фрунзенский район</option>
-                    <option value="Центральный район">Центральный район</option>
-                </select>
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
-            </div>
+<div class="m-5 p-4 mx-auto shadow rounded-lg" style="width:500px">
+    <p class="h4">Пожалуйста, заполните форму:</p><br>
+    <form class="was-validated" action="" novalidate>
+        <div class="form-group">
+            <label for="adminDistrict">Район администрации:</label>
+            <select class="custom-select" id="adminDistrict" onchange="sendMessage()" required>
+                <option disabled selected value="">Выберите район</option>
+                <option value="Адмиралтейский район">Адмиралтейский район</option>
+                <option value="Василеостровский район">Василеостровский район</option>
+                <option value="Выборгский район">Выборгский район</option>
+                <option value="Калининский район">Калининский район</option>
+                <option value="Кировский район">Кировский район</option>
+                <option value="Колпинский район">Колпинский район</option>
+                <option value="Красногвардейский район">Красногвардейский район</option>
+                <option value="Красносельский район">Красносельский район</option>
+                <option value="Кронштадтcкий район">Кронштадтcкий район</option>
+                <option value="Курортный район">Курортный район</option>
+                <option value="Московский район">Московский район</option>
+                <option value="Невский район">Невский район</option>
+                <option value="Петроградский район">Петроградский район</option>
+                <option value="Петродворцовый райо">Петродворцовый район</option>
+                <option value="Приморский район">Приморский район</option>
+                <option value="Пушкинский район">Пушкинский район</option>
+                <option value="Фрунзенский район">Фрунзенский район</option>
+                <option value="Центральный район">Центральный район</option>
+            </select>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
 
-            <!--<div class="form-group">
-                <select class="chosen-select" multiple tabindex="4">
-                    <option value=""></option>
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="opel">Opel</option>
-                    <option value="audi">Audi</option>
-                </select>
-            </div>--!>
-
-
+        <!--<div class="form-group">
+            <select class="chosen-select" multiple tabindex="4">
+                <option value=""></option>
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="opel">Opel</option>
+                <option value="audi">Audi</option>
+            </select>
+        </div>--!>
 
 
-            <label for="seltag">Выберите наиболее подходящую область вашей проблемы:</label>
-            <div class="form-group" id="seltag">
-                <ul class="cboxtags">
-                    <li><input type="checkbox" id="checkboxOne" value=""><label for="checkboxOne">11111111</label></li>
-                    <li><input type="checkbox" id="checkboxTwo" value=""><label for="checkboxTwo">22222222222222</label></li>
-                    <li><input type="checkbox" id="checkboxThree" value=""><label for="checkboxThree">33333333333</label></li>
-                    <li><input type="checkbox" id="checkboxFour" value=""><label for="checkboxFour">444</label></li>
-                    <li><input type="checkbox" id="checkboxFive" value=""><label for="checkboxFive">55555555</label></li>
-                    <li><input type="checkbox" id="checkboxSix" value=""><label for="checkboxSix">6666666666</label></li>
-                    <li><input type="checkbox" id="checkboxSeven" value=""><label for="checkboxSeven">7777777777777777777777</label></li>
-                    <li><input type="checkbox" id="checkboxEight" value=""><label for="checkboxEight">8888</label></li>
-                    <li><input type="checkbox" id="checkboxNine" value=""><label for="checkboxNine">9999999999999999999</label></li>
-                    <li><input type="checkbox" id="checkboxTen" value=""><label for="checkboxTen">000000000000000000000000</label></li>
-                    <li class="ks-selected"><input type="checkbox" id="checkboxEleven" value=""><label for="checkboxEleven">121212121212</label></li>
-                    <li><input type="checkbox" id="checkboxTwelve" value=""><label for="checkboxTwelve">32323232322</label></li>
-                    <li><input type="checkbox" id="checkboxThirteen" value=""><label for="checkboxThirteen">434434</label></li>
-                    <li><input type="checkbox" id="checkboxFourteen" value=""><label for="checkboxFourteen">556655655656565656565656565656565656</label></li>
-                    <li><input type="checkbox" id="checkboxFifteen" value=""><label for="checkboxFifteen">7676766676767</label></li>
-                </ul>
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
-            </div>
+        <label for="seltag">Выберите наиболее подходящие области вашей проблемы:</label>
+        <div class="form-group" id="seltag">
+            <ul class="cboxtags">
+                <li><input type="checkbox" id="checkboxOne" value=""><label for="checkboxOne">11111111</label></li>
+                <li><input type="checkbox" id="checkboxTwo" value=""><label for="checkboxTwo">22222222222222</label>
+                </li>
+                <li><input type="checkbox" id="checkboxThree" value=""><label for="checkboxThree">33333333333</label>
+                </li>
+                <li><input type="checkbox" id="checkboxFour" value=""><label for="checkboxFour">444</label></li>
+                <li><input type="checkbox" id="checkboxFive" value=""><label for="checkboxFive">55555555</label></li>
+                <li><input type="checkbox" id="checkboxSix" value=""><label for="checkboxSix">6666666666</label></li>
+                <li><input type="checkbox" id="checkboxSeven" value=""><label
+                        for="checkboxSeven">7777777777777777777777</label></li>
+                <li><input type="checkbox" id="checkboxEight" value=""><label for="checkboxEight">8888</label></li>
+                <li><input type="checkbox" id="checkboxNine" value=""><label
+                        for="checkboxNine">9999999999999999999</label></li>
+                <li><input type="checkbox" id="checkboxTen" value=""><label
+                        for="checkboxTen">000000000000000000000000</label></li>
+                <li class="ks-selected"><input type="checkbox" id="checkboxEleven" value=""><label for="checkboxEleven">121212121212</label>
+                </li>
+                <li><input type="checkbox" id="checkboxTwelve" value=""><label for="checkboxTwelve">32323232322</label>
+                </li>
+                <li><input type="checkbox" id="checkboxThirteen" value=""><label for="checkboxThirteen">434434</label>
+                </li>
+                <li><input type="checkbox" id="checkboxFourteen" value=""><label for="checkboxFourteen">556655655656565656565656565656565656</label>
+                </li>
+                <li><input type="checkbox" id="checkboxFifteen" value=""><label
+                        for="checkboxFifteen">7676766676767</label></li>
+            </ul>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
 
-            <!--<label for="seltag">Выберите наиболее подходящую область вашей проблемы:</label>
-            <div id="seltag">
-                <div class="row">
-                    <div class="col">
-                        <div class="custom-control custom-checkbox mb-3">
-                            <input type="checkbox" class="custom-control-input" id="tag1" name="tag1">
-                            <label class="custom-control-label" for="tag1">средний Тег1</label>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="custom-control custom-checkbox mb-3">
-                            <input type="checkbox" class="custom-control-input" id="tag2" name="tag2">
-                            <label class="custom-control-label" for="tag2">очень длинный Тег номер №2, который занимает много места</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="custom-control custom-checkbox mb-3">
-                            <input type="checkbox" class="custom-control-input" id="tag3" name="tag3">
-                            <label class="custom-control-label" for="tag3">достаточно длинный Тег3</label>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="custom-control custom-checkbox mb-3">
-                            <input type="checkbox" class="custom-control-input" id="tag4" name="tag4">
-                            <label class="custom-control-label" for="tag4">Тег4</label>
-                        </div>
+        <!--<label for="seltag">Выберите наиболее подходящую область вашей проблемы:</label>
+        <div id="seltag">
+            <div class="row">
+                <div class="col">
+                    <div class="custom-control custom-checkbox mb-3">
+                        <input type="checkbox" class="custom-control-input" id="tag1" name="tag1">
+                        <label class="custom-control-label" for="tag1">ЖКХ Тег1</label>
                     </div>
                 </div>
-            </div> --!>
-
-
-            <div class="form-group">
-                <label for="request">Ваша проблема:</label>
-                <textarea class="form-control" rows="8" id="request" required></textarea>
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
+                <div class="col">
+                    <div class="custom-control custom-checkbox mb-3">
+                        <input type="checkbox" class="custom-control-input" id="tag2" name="tag2">
+                        <label class="custom-control-label" for="tag2"></label>
+                    </div>
+                </div>
             </div>
+            <div class="row">
+                <div class="col">
+                    <div class="custom-control custom-checkbox mb-3">
+                        <input type="checkbox" class="custom-control-input" id="tag3" name="tag3">
+                        <label class="custom-control-label" for="tag3">достаточно длинный Тег3</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="custom-control custom-checkbox mb-3">
+                        <input type="checkbox" class="custom-control-input" id="tag4" name="tag4">
+                        <label class="custom-control-label" for="tag4">Тег4</label>
+                    </div>
+                </div>
+            </div>
+        </div> --!>
 
-            <button type="submit" id="submitBtn" class="btn btn-secondary">Отправить</button>
-        </form>
-    </div>
 
+        <div class="form-group">
+            <label for="request">Ваша проблема:</label>
+            <textarea class="form-control" rows="8" id="request" required></textarea>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+
+        <button type="submit" id="submitBtn" class="btn btn-secondary">Отправить</button>
+    </form>
+</div>
+<script>
+
+
+
+
+function sendMessage(ip, port, command, region, text){
+    var address = `${ip}:${port}/${command}`;
+    var request = new XMLHttpRequest();
+    request.open("PUT", address, true);
+    request.setRequestHeader("Content-Type", "application/json");
+    request.timeout = 15000;
+    request.send(JSON.stringify(data));
+}
+
+document.getElementById("submitBtn").onclick = () => {
+
+    var district = document.getElementById('adminDistrict').value;
+    var request = document.getElementById('request').value;
+    sendMessage("127.0.0.1","8080", "sendMessage", district, request);
+};
+
+
+</script>
 </body>
 </html>
