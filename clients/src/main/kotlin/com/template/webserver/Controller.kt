@@ -1,9 +1,8 @@
 package com.template.webserver
 
 import org.slf4j.LoggerFactory
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.http.MediaType.APPLICATION_JSON_VALUE
+import org.springframework.web.bind.annotation.*
 
 /**
  * Define your API endpoints here.
@@ -20,6 +19,12 @@ class Controller(rpc: NodeRPCConnection) {
 
     @GetMapping(value = ["/sendMessage"], produces = ["text/plain"])
     private fun templateendpoint(): String {
+        print("We are good")
         return "Define an endpoint here."
+    }
+
+    @PostMapping("/postMessage", produces = ["text/plain"])
+    private fun templatepoint(@RequestBody text: String) {
+        print(text)
     }
 }
