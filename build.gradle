@@ -102,6 +102,7 @@ cordapp {
 }
 
 task deployNodes(type: net.corda.plugins.Cordform, dependsOn: ['jar']) {
+    directory "./nodes"
     nodeDefaults {
         projectCordapp {
             deploy = false
