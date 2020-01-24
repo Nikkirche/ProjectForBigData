@@ -1,5 +1,10 @@
 "use strict";
 // Define your client-side logic here.
+
+$(document).ready(function(){
+	$(".chosen").chosen();
+});
+
 (function() {
     'use strict';
     window.addEventListener('load', function() {
@@ -24,7 +29,6 @@ function getMethod(address){
           console.log('status: ' + textStatus + ', data:' + data);
     });
 }
-
 function postMethod(address, data){
     $.post(`/${address}`, data)
       .done(function( requestData ) {

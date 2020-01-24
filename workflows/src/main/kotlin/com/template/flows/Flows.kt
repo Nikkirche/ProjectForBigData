@@ -8,6 +8,7 @@ import net.corda.core.flows.*
 import net.corda.core.identity.Party
 import net.corda.core.transactions.TransactionBuilder
 import net.corda.core.utilities.ProgressTracker
+import java.time.LocalDate
 
 // *********
 // * Flows *
@@ -37,7 +38,6 @@ import net.corda.core.utilities.ProgressTracker
 
             // Creating a session with the other party.
             val otherPartySession = initiateFlow(administration)
-
             // We finalise the transaction and then send it to the counterparty.
             subFlow(FinalityFlow(signedTx, otherPartySession))
         }
