@@ -2,10 +2,9 @@
 <html xmlns="">
 <head>
     <title>Заявитель</title>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
 
     <link rel="stylesheet" href="chosen/docsupport/style.css">
     <link rel="stylesheet" href="chosen/docsupport/prism.css">
@@ -61,23 +60,80 @@
 
         <label for="seltag">Область вашей проблемы:</label>
         <div class="form-row" id="seltag">
-            <div class="col-md-4">
+            <div id="tagSelect" class="col-md-12">
                 <select class="custom-select form-control" id="tag">
                     <option value="" disabled selected>Выберите..</option>
                     <option value="JKH">ЖКХ</option>
-                    <option value="2">Благоустройство</option>
+                    <option value="Blago">Благоустройство</option>
+                    <option value="Illegal">Незаконная деятельность</option>
+                    <option value="Transport">Общественный транспорт</option>
+                    <option value="Other">Другое</option>
                 </select>
             </div>
 
-            <div class="col-md-8" id="jkhTags">
-                <select class="custom-select form-control" >
+            <div class="col-md-8 podTags" id="jkhTags">
+                <select class="custom-select form-control" id="jkhSel">
                     <option value="" disabled selected>Более конкретнее..</option>
-                    <option value="JKH">ЖКХ</option>
-                    <option value="2">Благоустройство</option>
+                    <option value="ElectroSnab">Электроснабжение</option>
+                    <option value="VodoSnab">Водоснабжение</option>
+                    <option value="Otoplenie">Отопление</option>
+                    <option value="Ventilacia">Вентиляция</option>
+                    <option value="Lift">Лифт</option>
+                    <option value="VivozMusora">Вывоз мусора</option>
+                    <option value="Molniezashita">Молниезащита</option>
+                    <option value="PozharBezop">Пожарная безопасность</option>
+                    <option value="KapRemont">Капитальный ремонт</option>
+                    <option value="SanOchistka">Санитарная очистка</option>
+                    <option value="Kvartira">Квартира</option>
+                    <option value="Paradnaya">Парадная</option>
+                    <option value="Podval">Подвалы</option>
+                    <option value="Cherdak">Чердаки</option>
+                    <option value="Shum">Шум</option>
+                    <option value="OrdVopr">Организационно-правовые вопросы</option>
+                    <option value="AvarZhil">Аварийное и ветхое жилье</option>
+                    <option value="OtherZHK">Другое</option>
                 </select>
             </div>
 
+            <div class="col-md-8 podTags" id="blagoTags">
+                <select class="custom-select form-control" id="blagoSel">
+                    <option value="" disabled selected>Более конкретнее..</option>
+                    <option value="UlitizaciaBO">Утилизация бытовых отходов</option>
+                    <option value="SadParkHoz">Садо-парковое хозяйство</option>
+                    <option value="MalieArhFormi">Малые архитектурные формы</option>
+                    <option value="Vodoemi">Водоемы</option>
+                    <option value="Plyazhi">Пляжи</option>
+                    <option value="Zemleustroystvo">Землеустройство</option>
+                    <option value="Osveshenie">Освещение</option>
+                    <option value="LivKanalizacia">Ливневая канализация</option>
+                    <option value="NeubrSneg">Неубранный снег</option>
+                    <option value="Provoda">Провода на зданиях</option>
+                    <option value="AvarDerevya">Аварийные деревья</option>
+                    <option value="ReclKonstr">Рекламные или информационные конструкции</option>
+                    <option value="NadpObyavl">Несанкционированные надписи/объявления на сооружениях</option>
+                    <option value="OtherBlago">Другое</option>
+                </select>
+            </div>
+            <div class="col-md-8 podTags" id="illegalTags">
+                <select class="custom-select form-control" id="illegalSel">
+                    <option value="" disabled selected>Более конкретнее..</option>
+                    <option value="NezStroitelstvo">Незаконное строительство</option>
+                    <option value="NezTorgovlya">Несанкционированная торговля</option>
+                    <option value="NezTrud">Незаконная трудовая деятельность</option>
+                    <option value="OtherIllegal">Другое</option>
+                </select>
+            </div>
 
+            <div class="col-md-8 podTags" id="transTags">
+                <select class="custom-select form-control" id="transSel">
+                    <option value="" disabled selected>Более конкретнее..</option>
+                    <option value="TehSost">Техническое состояние</option>
+                    <option value="SanSost">Санитарное состояние</option>
+                    <option value="Ostanovki">Остановки</option>
+                    <option value="SostDorog">Состояние дорог</option>
+                    <option value="OtherTrans">Другое</option>
+                </select>
+            </div>
         </div>
 
         <!--
@@ -147,7 +203,7 @@
 
         <div class="form-group">
             <label for="request">Ваша проблема:</label>
-            <textarea class="form-control inpt" rows="10" id="request" required></textarea>
+            <textarea class="form-control inpt" rows="15" id="request" required></textarea>
             <small class="form-text text-muted">Длина текста должна быть не менее 30 символов.</small>
             <div class="valid-feedback">Тут все верно.</div>
             <div class="invalid-feedback">Чтобы продолжить, вы должны хоть что-то написать.</div>

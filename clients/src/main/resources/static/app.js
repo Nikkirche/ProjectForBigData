@@ -6,17 +6,57 @@
 $(document).ready(function() {
 
     $("#jkhTags").hide();
+    $("#blagoTags").hide();
+    $("#illegalTags").hide();
+    $("#transTags").hide();
 
     $("#tag").on("change", function(){
-        console.log(1);
+        switch( $("#tag").val() ) {
+            case "JKH":
+                $("#tagSelect").removeClass("col-md-12");
+                $("#tagSelect").addClass("col-md-4");
+                $(".podTags:visible").hide();
+                $("#jkhTags").show(700);
+                break;
+            case "Blago":
+                $("#tagSelect").removeClass("col-md-12");
+                $("#tagSelect").addClass("col-md-4");
+                $(".podTags:visible").hide();
+                $("#blagoTags").show(700);
+                break;
+            case "Illegal":
+                $("#tagSelect").removeClass("col-md-12");
+                $("#tagSelect").addClass("col-md-4");
+                $(".podTags:visible").hide();
+                $("#illegalTags").show(700);
+                break;
+            case "Transport":
+                $("#tagSelect").removeClass("col-md-12");
+                $("#tagSelect").addClass("col-md-4");
+                $(".podTags:visible").hide();
+                $("#transTags").show(700);
+                break;
+            case "Other":
+                $("#tagSelect").addClass("col-md-12");
+                $(".podTags:visible").hide();
+                break;
+        }
+
+        /*
         if( $("#tag").val() == "JKH" ){
-            console.log("ok")
-            $("#jkhTags").show(500);
+            $("#tagSelect").removeClass("col-md-12");
+            $("#tagSelect").addClass("col-md-4");
+            $("#jkhTags").show(700);
          }
-        if( $("#tag").val() == "JKH" ){
-                    console.log("ok")
-                    $("#jkhTags").show(1000);
+        else if( $("#tag").val() == "Blago" ){
+            $("#tagSelect").removeClass("col-md-12");
+            $("#tagSelect").addClass("col-md-4");
+            $("#blagoTags").show(700);
          }
+        else{
+            $("#jkhTags").hide();
+            $("#blagoTags").hide();
+        }*/
     });
 
 
@@ -28,14 +68,14 @@ $(document).ready(function() {
             $("#submitBtn").addClass("btn-warning");
         }
       else{
-           // $("#submitBtn").prop("disabled", true);
+            $("#submitBtn").prop("disabled", true);
             $("#submitBtn").removeClass("btn-warning");
             $("#submitBtn").addClass("btn-outline-secondary");
       }
      });
 });
 
-(function() {
+/*(function() {
     'use strict';
     window.addEventListener('load', function() {
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
@@ -51,7 +91,7 @@ $(document).ready(function() {
             }, false);
         });
     }, false);
-})();
+})();*/
 
 function getMethod(address){
     $.get(`/${address}`,  // url
