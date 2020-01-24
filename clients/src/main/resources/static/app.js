@@ -1,5 +1,40 @@
 "use strict";
 // Define your client-side logic here.
+// Material Select Initialization
+
+
+$(document).ready(function() {
+
+    $("#jkhTags").hide();
+
+    $("#tag").on("change", function(){
+        console.log(1);
+        if( $("#tag").val() == "JKH" ){
+            console.log("ok")
+            $("#jkhTags").show(500);
+         }
+        if( $("#tag").val() == "JKH" ){
+                    console.log("ok")
+                    $("#jkhTags").show(1000);
+         }
+    });
+
+
+
+     $('.inpt').on('keyup change', function(){
+      if( $("#adminDistrict").val().length != 0 && $("#request").val().length > 30){
+            $("#submitBtn").removeAttr("disabled");
+            $("#submitBtn").removeClass("btn-outline-secondary");
+            $("#submitBtn").addClass("btn-warning");
+        }
+      else{
+           // $("#submitBtn").prop("disabled", true);
+            $("#submitBtn").removeClass("btn-warning");
+            $("#submitBtn").addClass("btn-outline-secondary");
+      }
+     });
+});
+
 (function() {
     'use strict';
     window.addEventListener('load', function() {
@@ -18,50 +53,28 @@
     }, false);
 })();
 
-window.fn = {};
-
-window.fn.request = function (url, method, callback) {
-var request = new XMLHttpRequest();
-request.open(method, url, true);
-request.setRequestHeader("Content-Type", "application/json");
-request.timeout = 10000;
-
-request.onload = function () {
-    if (request.status >= 200 && request.status < 400) {
-        callback(null, JSON.parse(request.responseText));
-    } else {
-        callback("There was an error: " + request.status);
-    }
-};
-request.onerror = function () {
-    callback("Connection error");
-};
-
-request.send();
-};
-
-function sendMessage(ip, port, command, district, requestText){
-    var address = `${ip}:${port}/${command}`;
-
-    var request = new XMLHttpRequest();
-    fn.request(address,"GET",function(err,data){
-        alert(err);
-        alert(data);
+function getMethod(address){
+    $.get(`/${address}`,  // url
+      function (data, textStatus, jqXHR) {  // success callback
+          console.log('status: ' + textStatus + ', data:' + data);
     });
-    /*alert("Ok");
-    val myJSON = JSON.stringify(requestText);
-    alert("Ok");
-    var request = new XMLHttpRequest();
-    request.open("POST", address, true);
-    request.setRequestHeader("Content-Type", "application/json; charset=utf-8");
-    request.timeout = 10000;
-    request.send(myJSON);*/
+}
+function postMethod(address, data){
+    $.post(`/${address}`, data)
+      .done(function( requestData ) {
+        alert( "Data Loaded: " + requestData );
+      });
 }
 
-document.getElementById("submitBtn").onclick = () => {
-    var district = document.getElementById('adminDistrict').value;
-    var requestText = document.getElementById('request').value;
-    sendMessage("localhost","10050", "sendMessage", district, requestText);
-};
+$('#submitBtn').on('click', function(){
+    console.log('clicked')
+    var data = {
+        district: $('#adminDistrict').val(),
+        requestText: $('#request').val()
+    }
+    postMethod('postData', data);
+    getMethod('getData');
+})
+
 
 

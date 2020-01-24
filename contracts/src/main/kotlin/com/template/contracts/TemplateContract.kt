@@ -18,8 +18,9 @@ class TemplateContract : Contract {
     // does not throw an exception.
     override fun verify(tx: LedgerTransaction) {
         val out = tx.outputsOfType<TemplateState>().single()
-        require(out.appear.isNotEmpty()){"Error 1"}
-        require(out.appearance!=out.administration){"Error 2"}
+        require(out.appear.length > 5 ) { "Error 1" }
+        require(out.appearance != out.administration) { "Error 2" }
+        require(out.appear.length<10000){"Error 3"}
     }
 
     // Used to indicate the transaction's intent.

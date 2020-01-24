@@ -5,9 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+
+
+    <link rel="stylesheet" href="chosen/docsupport/style.css">
+    <link rel="stylesheet" href="chosen/docsupport/prism.css">
+    <link rel="stylesheet" href="chosen/chosen.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
 </head>
 
 <body>
@@ -24,48 +30,57 @@
 </nav>
 
 <div class="m-5 p-4 mx-auto shadow rounded-lg" style="width:500px">
-    <p class="h4">Пожалуйста, заполните форму:</p><br>
+    <p class="h4">Заполните форму:</p><br>
     <form class="needs-validation" action="" novalidate>
         <div class="form-group">
             <label for="adminDistrict">Район администрации:</label>
-            <select class="custom-select" id="adminDistrict" required>
-                <option disabled selected value="">Выберите район</option>
-                <option value="Адмиралтейский район">Адмиралтейский район</option>
-                <option value="Василеостровский район">Василеостровский район</option>
-                <option value="Выборгский район">Выборгский район</option>
-                <option value="Калининский район">Калининский район</option>
-                <option value="Кировский район">Кировский район</option>
-                <option value="Колпинский район">Колпинский район</option>
-                <option value="Красногвардейский район">Красногвардейский район</option>
-                <option value="Красносельский район">Красносельский район</option>
-                <option value="Кронштадтcкий район">Кронштадтcкий район</option>
-                <option value="Курортный район">Курортный район</option>
-                <option value="Московский район">Московский район</option>
-                <option value="Невский район">Невский район</option>
-                <option value="Петроградский район">Петроградский район</option>
-                <option value="Петродворцовый райо">Петродворцовый район</option>
-                <option value="Приморский район">Приморский район</option>
-                <option value="Пушкинский район">Пушкинский район</option>
-                <option value="Фрунзенский район">Фрунзенский район</option>
-                <option value="Центральный район">Центральный район</option>
+            <select class="custom-select inpt" id="adminDistrict" required>
+                <option disabled selected value="">Выберите район...</option>
+                <option value="Admiralteyskiy">Адмиралтейский район</option>
+                <option value="Vasileostrovskiy">Василеостровский район</option>
+                <option value="Viborgskiy">Выборгский район</option>
+                <option value="Kalininskiy">Калининский район</option>
+                <option value="Kirovskiy">Кировский район</option>
+                <option value="Kolpinskiy">Колпинский район</option>
+                <option value="Krasnogvardeyskiy">Красногвардейский район</option>
+                <option value="Krasnoselskiy">Красносельский район</option>
+                <option value="Kronshtadskiy">Кронштадтcкий район</option>
+                <option value="Kurortniy">Курортный район</option>
+                <option value="Moskovskiy">Московский район</option>
+                <option value="Nevskiy">Невский район</option>
+                <option value="Petrogradskiy">Петроградский район</option>
+                <option value="Petrodvorcoviy">Петродворцовый район</option>
+                <option value="Primorskiy">Приморский район</option>
+                <option value="Pushkinskiy">Пушкинский район</option>
+                <option value="Frunzenskiy">Фрунзенский район</option>
+                <option value="Centralniy">Центральный район</option>
             </select>
             <div class="valid-feedback">Тут все верно.</div>
             <div class="invalid-feedback">Чтобы продолжить, вы должны выбрать район администрации</div>
         </div>
 
-        <!--
-        <div class="form-group">
-            <select class="chosen-select" multiple tabindex="4">
-                <option value=""></option>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="opel">Opel</option>
-                <option value="audi">Audi</option>
-            </select>
+        <label for="seltag">Область вашей проблемы:</label>
+        <div class="form-row" id="seltag">
+            <div class="col-md-4">
+                <select class="custom-select form-control" id="tag">
+                    <option value="" disabled selected>Выберите..</option>
+                    <option value="JKH">ЖКХ</option>
+                    <option value="2">Благоустройство</option>
+                </select>
+            </div>
+
+            <div class="col-md-8" id="jkhTags">
+                <select class="custom-select form-control" >
+                    <option value="" disabled selected>Более конкретнее..</option>
+                    <option value="JKH">ЖКХ</option>
+                    <option value="2">Благоустройство</option>
+                </select>
+            </div>
+
+
         </div>
-        --!>
 
-
+        <!--
         <label for="seltag">Выберите наиболее подходящие области вашей проблемы:</label>
         <div class="form-group" id="seltag">
             <ul class="cboxtags">
@@ -95,7 +110,7 @@
                 <li><input type="checkbox" id="checkboxFifteen" value=""><label
                         for="checkboxFifteen">7676766676767</label></li>
             </ul>
-        </div>
+        </div>-->
 
         <!--<label for="seltag">Выберите наиболее подходящую область вашей проблемы:</label>
         <div id="seltag">
@@ -127,30 +142,28 @@
                     </div>
                 </div>
             </div>
-        </div> --!>
+        </div> -->
 
 
         <div class="form-group">
             <label for="request">Ваша проблема:</label>
-            <textarea class="form-control" rows="8" id="request" required></textarea>
+            <textarea class="form-control inpt" rows="10" id="request" required></textarea>
+            <small class="form-text text-muted">Длина текста должна быть не менее 30 символов.</small>
             <div class="valid-feedback">Тут все верно.</div>
             <div class="invalid-feedback">Чтобы продолжить, вы должны хоть что-то написать.</div>
         </div>
 
-        <button type="submit" id="submitBtn" class="btn btn-warning">Отправить</button>
+        <button disabled id="submitBtn" class="btn btn-outline-secondary">Отправить</button>
     </form>
 </div>
-
-    <script src="app.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    <!--<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
             integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>
+            crossorigin="anonymous"></script>-->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src=" app.js"></script>
 </body>
 </html>
