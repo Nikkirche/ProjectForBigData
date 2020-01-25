@@ -7,6 +7,7 @@ import net.corda.core.identity.Party
 import net.corda.core.messaging.startFlow
 import net.corda.core.messaging.vaultQueryBy
 import net.corda.core.utilities.getOrThrow
+import net.corda.serialization.internal.model.TypeIdentifier
 import org.slf4j.LoggerFactory
 import org.springframework.http.MediaType.APPLICATION_JSON_VALUE
 import org.springframework.web.bind.annotation.*
@@ -27,14 +28,14 @@ class Controller(rpc: NodeRPCConnection) {
     private val proxy = rpc.proxy
 
     @GetMapping(value = ["/getData"], produces = ["text/plain"])
-    private fun getData(): String {
-        var data = proxy.vaultQueryBy<TemplateState>().states.map {
-            print(it.state.data.appear)
-            print(it.state.data.appearance)
-            print(it.state.data.administration)
-    }
-        print(data)
-        return "Define an endpoint here."
+    private fun getData(): List<Array<Any>> {
+        val data : List<Array<Any>> = proxy.vaultQueryBy<TemplateState>().states.map {
+            arrayOf(it.state.data.administration,it.state.data.appearance,it.state.data.appear.substringAfter("&requestText="))
+        }
+
+        //print("Admin: " + data[0][0] + "\n appeareance: " + data[0][1] + "\n appear: " + data[0][2] + "\n")
+
+        return data
     }
 
     @PostMapping(value = ["/postData"], produces = ["text/plain"])

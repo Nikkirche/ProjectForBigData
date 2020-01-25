@@ -75,12 +75,15 @@ $('#submitBtn').on('click', function(){
     var data = {
         district: $('#adminDistrict').val(),
         requestText: $('#request').val(),
-        $($('#seltag').find('div:visible select')[0]).val(),
-        $($('#seltag').find('div:visible select')[1]).val()
+        nadTag: $($('#seltag').find('div:visible select')[0]).val(),
+        podTag: $($('#seltag').find('div:visible select')[1]).val()
     }
-    postMethod('postData', data);
-    getMethod('getData');
+    //postMethod('postData', data);
+    var result = getMethod('getData');
+    console.log(result)
+
 })
+
 
 
 
