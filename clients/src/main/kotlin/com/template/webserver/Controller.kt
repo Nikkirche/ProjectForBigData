@@ -1,9 +1,11 @@
 package com.template.webserver
 
 import com.template.flows.Initiator
+import com.template.states.TemplateState
 import net.corda.core.identity.CordaX500Name
 import net.corda.core.identity.Party
 import net.corda.core.messaging.startFlow
+import net.corda.core.messaging.vaultQueryBy
 import net.corda.core.utilities.getOrThrow
 import org.slf4j.LoggerFactory
 import org.springframework.http.MediaType.APPLICATION_JSON_VALUE
@@ -26,13 +28,19 @@ class Controller(rpc: NodeRPCConnection) {
 
     @GetMapping(value = ["/getData"], produces = ["text/plain"])
     private fun getData(): String {
+        var data = proxy.vaultQueryBy<TemplateState>().states.map {
+            print(it.state.data.appear)
+            print(it.state.data.appearance)
+            print(it.state.data.administration)
+    }
+        print(data)
         return "Define an endpoint here."
     }
 
     @PostMapping(value = ["/postData"], produces = ["text/plain"])
     private fun postData(@RequestBody text: String) {
-        val administration= CordaX500Name.parse("O=PartyB,L=New York,C=US")
-        val party : Party = proxy.wellKnownPartyFromX500Name(administration)!!
-        proxy.startFlow(::Initiator,text,party).returnValue.getOrThrow()
+        val administration = CordaX500Name.parse("O=PartyB,L=New York,C=US")
+        val party: Party = proxy.wellKnownPartyFromX500Name(administration)!!
+        proxy.startFlow(::Initiator, text, party).returnValue.getOrThrow()
     }
 }
