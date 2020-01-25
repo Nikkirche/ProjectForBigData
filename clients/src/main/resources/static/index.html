@@ -6,9 +6,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="chosen/docsupport/style.css">
-    <link rel="stylesheet" href="chosen/docsupport/prism.css">
-    <link rel="stylesheet" href="chosen/chosen.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
@@ -61,7 +58,7 @@
         <label for="seltag">Область вашей проблемы:</label>
         <div class="form-row" id="seltag">
             <div id="tagSelect" class="col-md-12">
-                <select class="custom-select form-control" id="tag">
+                <select class="custom-select form-control " id="tag">
                     <option value="" disabled selected>Выберите..</option>
                     <option value="JKH">ЖКХ</option>
                     <option value="Blago">Благоустройство</option>
@@ -72,7 +69,7 @@
             </div>
 
             <div class="col-md-8 podTags" id="jkhTags">
-                <select class="custom-select form-control" id="jkhSel">
+                <select class="custom-select form-control podT" id="jkhSel">
                     <option value="" disabled selected>Более конкретнее..</option>
                     <option value="ElectroSnab">Электроснабжение</option>
                     <option value="VodoSnab">Водоснабжение</option>
@@ -96,7 +93,7 @@
             </div>
 
             <div class="col-md-8 podTags" id="blagoTags">
-                <select class="custom-select form-control" id="blagoSel">
+                <select class="custom-select form-control podT" id="blagoSel">
                     <option value="" disabled selected>Более конкретнее..</option>
                     <option value="UlitizaciaBO">Утилизация бытовых отходов</option>
                     <option value="SadParkHoz">Садо-парковое хозяйство</option>
@@ -115,7 +112,7 @@
                 </select>
             </div>
             <div class="col-md-8 podTags" id="illegalTags">
-                <select class="custom-select form-control" id="illegalSel">
+                <select class="custom-select form-control podT" id="illegalSel">
                     <option value="" disabled selected>Более конкретнее..</option>
                     <option value="NezStroitelstvo">Незаконное строительство</option>
                     <option value="NezTorgovlya">Несанкционированная торговля</option>
@@ -125,7 +122,7 @@
             </div>
 
             <div class="col-md-8 podTags" id="transTags">
-                <select class="custom-select form-control" id="transSel">
+                <select class="custom-select form-control podT" id="transSel">
                     <option value="" disabled selected>Более конкретнее..</option>
                     <option value="TehSost">Техническое состояние</option>
                     <option value="SanSost">Санитарное состояние</option>
@@ -213,6 +210,8 @@
     </form>
 </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src=" app.js"></script>
     <!--<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
             integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
             crossorigin="anonymous"></script>-->
