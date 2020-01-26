@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="">
 <head>
-    <title>Заявитель</title>
+    <title>Реестр городских проблем</title>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,213 +12,235 @@
           crossorigin="anonymous">
 </head>
 
-<body>
+<body class="bg-light">
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <ul class="navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link" href="adminPage.html">Администрация</a>
-        </li>
-        <li class="nav-item active">
-            <a class="nav-link" href="index.html">Заявитель</a>
-        </li>
-    </ul>
-</nav>
+    <!--<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="adminPage.html">Администрация</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Заявитель</a>
+            </li>
+        </ul>
+    </nav>-->
 
-<div class="m-5 p-4 mx-auto shadow rounded-lg" style="width:500px">
-    <p class="h4">Заполните форму:</p><br>
-    <form class="needs-validation" action="" novalidate>
-        <div class="form-group">
-            <label for="adminDistrict">Район администрации:</label>
-            <select class="custom-select inpt" id="adminDistrict" required>
-                <option disabled selected value="">Выберите район...</option>
-                <option value="Admiralteyskiy">Адмиралтейский район</option>
-                <option value="Vasileostrovskiy">Василеостровский район</option>
-                <option value="Viborgskiy">Выборгский район</option>
-                <option value="Kalininskiy">Калининский район</option>
-                <option value="Kirovskiy">Кировский район</option>
-                <option value="Kolpinskiy">Колпинский район</option>
-                <option value="Krasnogvardeyskiy">Красногвардейский район</option>
-                <option value="Krasnoselskiy">Красносельский район</option>
-                <option value="Kronshtadskiy">Кронштадтcкий район</option>
-                <option value="Kurortniy">Курортный район</option>
-                <option value="Moskovskiy">Московский район</option>
-                <option value="Nevskiy">Невский район</option>
-                <option value="Petrogradskiy">Петроградский район</option>
-                <option value="Petrodvorcoviy">Петродворцовый район</option>
-                <option value="Primorskiy">Приморский район</option>
-                <option value="Pushkinskiy">Пушкинский район</option>
-                <option value="Frunzenskiy">Фрунзенский район</option>
-                <option value="Centralniy">Центральный район</option>
-            </select>
-            <div class="valid-feedback">Тут все верно.</div>
-            <div class="invalid-feedback">Чтобы продолжить, вы должны выбрать район администрации</div>
+    <div id="privet" class="m-5 p-5 mx-auto shadow rCornenrs clearfix bg-white" style="width : 500px">
+        <div class="mb-5">
+            <p class="h1 font-weight-bold">Реестр городских проблем</p>
+        </div>
+        <div>
+            <p class="gl">
+                Данный проект был создан для своевременного оповещения местных органов власти
+                о возникших проблемах, требующих решения.</p>
+        </div>
+        <div>
+            <p class="gl"> Для того, чтобы оставить заявление, просто нажмите
+                кнопку "Заявить о проблеме" и ответьте на несколько вопросов. Ваша жалоба будет направлена
+                администраторам района, где возникла проблема. В заявлении обязательно укажите адрес возникшей
+                проблемы. Так же можете указать ваши контакты (телефон или адрес электронной почты). Заявления
+                подаются абсолютно анонимно; никто не узнает автора, кроме вас самих. Обратите внимание, что жалобы,
+                содержащие ненормативную лексику, жалобы с идентичным текстом заявления, а так же жалобы, нарушающие
+                законы РФ — не учитываются.</p>
         </div>
 
-        <label for="seltag">Область вашей проблемы:</label>
-        <div class="form-row" id="seltag">
-            <div id="tagSelect" class="col-md-12">
-                <select class="custom-select form-control " id="tag">
-                    <option value="" disabled selected>Выберите..</option>
-                    <option value="JKH">ЖКХ</option>
-                    <option value="Blago">Благоустройство</option>
-                    <option value="Illegal">Незаконная деятельность</option>
-                    <option value="Transport">Общественный транспорт</option>
-                    <option value="Other">Другое</option>
+        <div id="nextBtn" class="btn btn-success float-right mt-4">Заявить о проблеме</div>
+
+    </div>
+
+    <div id="forma" class="clearfix m-5 p-5 mx-auto shadow rCornenrs bg-white" style="width : 500px">
+        <p class="h3">Заполните форму:</p><br>
+        <form action="">
+            <div class="form-group">
+                <label for="adminDistrict">Район администрации:</label>
+                <select class="custom-select inpt" id="adminDistrict">
+                    <option disabled selected value="">Выберите район...</option>
+                    <option value="Admiralteyskiy">Адмиралтейский район</option>
+                    <option value="Vasileostrovskiy">Василеостровский район</option>
+                    <option value="Viborgskiy">Выборгский район</option>
+                    <option value="Kalininskiy">Калининский район</option>
+                    <option value="Kirovskiy">Кировский район</option>
+                    <option value="Kolpinskiy">Колпинский район</option>
+                    <option value="Krasnogvardeyskiy">Красногвардейский район</option>
+                    <option value="Krasnoselskiy">Красносельский район</option>
+                    <option value="Kronshtadskiy">Кронштадтcкий район</option>
+                    <option value="Kurortniy">Курортный район</option>
+                    <option value="Moskovskiy">Московский район</option>
+                    <option value="Nevskiy">Невский район</option>
+                    <option value="Petrogradskiy">Петроградский район</option>
+                    <option value="Petrodvorcoviy">Петродворцовый район</option>
+                    <option value="Primorskiy">Приморский район</option>
+                    <option value="Pushkinskiy">Пушкинский район</option>
+                    <option value="Frunzenskiy">Фрунзенский район</option>
+                    <option value="Centralniy">Центральный район</option>
                 </select>
             </div>
 
-            <div class="col-md-8 podTags" id="jkhTags">
-                <select class="custom-select form-control podT" id="jkhSel">
-                    <option value="" disabled selected>Более конкретнее..</option>
-                    <option value="ElectroSnab">Электроснабжение</option>
-                    <option value="VodoSnab">Водоснабжение</option>
-                    <option value="Otoplenie">Отопление</option>
-                    <option value="Ventilacia">Вентиляция</option>
-                    <option value="Lift">Лифт</option>
-                    <option value="VivozMusora">Вывоз мусора</option>
-                    <option value="Molniezashita">Молниезащита</option>
-                    <option value="PozharBezop">Пожарная безопасность</option>
-                    <option value="KapRemont">Капитальный ремонт</option>
-                    <option value="SanOchistka">Санитарная очистка</option>
-                    <option value="Kvartira">Квартира</option>
-                    <option value="Paradnaya">Парадная</option>
-                    <option value="Podval">Подвалы</option>
-                    <option value="Cherdak">Чердаки</option>
-                    <option value="Shum">Шум</option>
-                    <option value="OrdVopr">Организационно-правовые вопросы</option>
-                    <option value="AvarZhil">Аварийное и ветхое жилье</option>
-                    <option value="OtherZHK">Другое</option>
-                </select>
-            </div>
-
-            <div class="col-md-8 podTags" id="blagoTags">
-                <select class="custom-select form-control podT" id="blagoSel">
-                    <option value="" disabled selected>Более конкретнее..</option>
-                    <option value="UlitizaciaBO">Утилизация бытовых отходов</option>
-                    <option value="SadParkHoz">Садо-парковое хозяйство</option>
-                    <option value="MalieArhFormi">Малые архитектурные формы</option>
-                    <option value="Vodoemi">Водоемы</option>
-                    <option value="Plyazhi">Пляжи</option>
-                    <option value="Zemleustroystvo">Землеустройство</option>
-                    <option value="Osveshenie">Освещение</option>
-                    <option value="LivKanalizacia">Ливневая канализация</option>
-                    <option value="NeubrSneg">Неубранный снег</option>
-                    <option value="Provoda">Провода на зданиях</option>
-                    <option value="AvarDerevya">Аварийные деревья</option>
-                    <option value="ReclKonstr">Рекламные или информационные конструкции</option>
-                    <option value="NadpObyavl">Несанкционированные надписи/объявления на сооружениях</option>
-                    <option value="OtherBlago">Другое</option>
-                </select>
-            </div>
-            <div class="col-md-8 podTags" id="illegalTags">
-                <select class="custom-select form-control podT" id="illegalSel">
-                    <option value="" disabled selected>Более конкретнее..</option>
-                    <option value="NezStroitelstvo">Незаконное строительство</option>
-                    <option value="NezTorgovlya">Несанкционированная торговля</option>
-                    <option value="NezTrud">Незаконная трудовая деятельность</option>
-                    <option value="OtherIllegal">Другое</option>
-                </select>
-            </div>
-
-            <div class="col-md-8 podTags" id="transTags">
-                <select class="custom-select form-control podT" id="transSel">
-                    <option value="" disabled selected>Более конкретнее..</option>
-                    <option value="TehSost">Техническое состояние</option>
-                    <option value="SanSost">Санитарное состояние</option>
-                    <option value="Ostanovki">Остановки</option>
-                    <option value="SostDorog">Состояние дорог</option>
-                    <option value="OtherTrans">Другое</option>
-                </select>
-            </div>
-        </div>
-
-        <!--
-        <label for="seltag">Выберите наиболее подходящие области вашей проблемы:</label>
-        <div class="form-group" id="seltag">
-            <ul class="cboxtags">
-                <li><input type="checkbox" id="checkboxOne" value=""><label for="checkboxOne">11111111</label></li>
-                <li><input type="checkbox" id="checkboxTwo" value=""><label for="checkboxTwo">22222222222222</label>
-                </li>
-                <li><input type="checkbox" id="checkboxThree" value=""><label for="checkboxThree">33333333333</label>
-                </li>
-                <li><input type="checkbox" id="checkboxFour" value=""><label for="checkboxFour">444</label></li>
-                <li><input type="checkbox" id="checkboxFive" value=""><label for="checkboxFive">55555555</label></li>
-                <li><input type="checkbox" id="checkboxSix" value=""><label for="checkboxSix">6666666666</label></li>
-                <li><input type="checkbox" id="checkboxSeven" value=""><label
-                        for="checkboxSeven">7777777777777777777777</label></li>
-                <li><input type="checkbox" id="checkboxEight" value=""><label for="checkboxEight">8888</label></li>
-                <li><input type="checkbox" id="checkboxNine" value=""><label
-                        for="checkboxNine">9999999999999999999</label></li>
-                <li><input type="checkbox" id="checkboxTen" value=""><label
-                        for="checkboxTen">000000000000000000000000</label></li>
-                <li class="ks-selected"><input type="checkbox" id="checkboxEleven" value=""><label for="checkboxEleven">121212121212</label>
-                </li>
-                <li><input type="checkbox" id="checkboxTwelve" value=""><label for="checkboxTwelve">32323232322</label>
-                </li>
-                <li><input type="checkbox" id="checkboxThirteen" value=""><label for="checkboxThirteen">434434</label>
-                </li>
-                <li><input type="checkbox" id="checkboxFourteen" value=""><label for="checkboxFourteen">556655655656565656565656565656565656</label>
-                </li>
-                <li><input type="checkbox" id="checkboxFifteen" value=""><label
-                        for="checkboxFifteen">7676766676767</label></li>
-            </ul>
-        </div>-->
-
-        <!--<label for="seltag">Выберите наиболее подходящую область вашей проблемы:</label>
-        <div id="seltag">
-            <div class="row">
-                <div class="col">
-                    <div class="custom-control custom-checkbox mb-3">
-                        <input type="checkbox" class="custom-control-input" id="tag1" name="tag1">
-                        <label class="custom-control-label" for="tag1">ЖКХ Тег1</label>
-                    </div>
+            <label for="seltag">Область вашей проблемы:</label>
+            <div class="form-row" id="seltag">
+                <div id="tagSelect" class="col-md-12">
+                    <select class="custom-select form-control inpt" id="tag">
+                        <option value="" disabled selected>Выберите..</option>
+                        <option value="JKH">ЖКХ</option>
+                        <option value="Blago">Благоустройство</option>
+                        <option value="Illegal">Незаконная деятельность</option>
+                        <option value="Transport">Общественный транспорт</option>
+                        <option value="Other">Другое</option>
+                    </select>
                 </div>
-                <div class="col">
-                    <div class="custom-control custom-checkbox mb-3">
-                        <input type="checkbox" class="custom-control-input" id="tag2" name="tag2">
-                        <label class="custom-control-label" for="tag2"></label>
-                    </div>
+
+                <div class="col-md-8 podTags" id="jkhTags">
+                    <select class="custom-select form-control podT" id="jkhSel">
+                        <option value="" disabled selected>Более конкретнее..</option>
+                        <option value="ElectroSnab">Электроснабжение</option>
+                        <option value="VodoSnab">Водоснабжение</option>
+                        <option value="Otoplenie">Отопление</option>
+                        <option value="Ventilacia">Вентиляция</option>
+                        <option value="Lift">Лифт</option>
+                        <option value="VivozMusora">Вывоз мусора</option>
+                        <option value="Molniezashita">Молниезащита</option>
+                        <option value="PozharBezop">Пожарная безопасность</option>
+                        <option value="KapRemont">Капитальный ремонт</option>
+                        <option value="SanOchistka">Санитарная очистка</option>
+                        <option value="Kvartira">Квартира</option>
+                        <option value="Paradnaya">Парадная</option>
+                        <option value="Podval">Подвалы</option>
+                        <option value="Cherdak">Чердаки</option>
+                        <option value="Shum">Шум</option>
+                        <option value="OrdVopr">Организационно-правовые вопросы</option>
+                        <option value="AvarZhil">Аварийное и ветхое жилье</option>
+                        <option value="OtherZHK">Другое</option>
+                    </select>
+                </div>
+
+                <div class="col-md-8 podTags" id="blagoTags">
+                    <select class="custom-select form-control podT" id="blagoSel">
+                        <option value="" disabled selected>Более конкретнее..</option>
+                        <option value="UlitizaciaBO">Утилизация бытовых отходов</option>
+                        <option value="SadParkHoz">Садо-парковое хозяйство</option>
+                        <option value="MalieArhFormi">Малые архитектурные формы</option>
+                        <option value="Vodoemi">Водоемы</option>
+                        <option value="Plyazhi">Пляжи</option>
+                        <option value="Zemleustroystvo">Землеустройство</option>
+                        <option value="Osveshenie">Освещение</option>
+                        <option value="LivKanalizacia">Ливневая канализация</option>
+                        <option value="NeubrSneg">Неубранный снег</option>
+                        <option value="Provoda">Провода на зданиях</option>
+                        <option value="AvarDerevya">Аварийные деревья</option>
+                        <option value="ReclKonstr">Рекламные или информационные конструкции</option>
+                        <option value="NadpObyavl">Несанкционированные надписи/объявления на сооружениях</option>
+                        <option value="OtherBlago">Другое</option>
+                    </select>
+                </div>
+                <div class="col-md-8 podTags" id="illegalTags">
+                    <select class="custom-select form-control podT" id="illegalSel">
+                        <option value="" disabled selected>Более конкретнее..</option>
+                        <option value="NezStroitelstvo">Незаконное строительство</option>
+                        <option value="NezTorgovlya">Несанкционированная торговля</option>
+                        <option value="NezTrud">Незаконная трудовая деятельность</option>
+                        <option value="OtherIllegal">Другое</option>
+                    </select>
+                </div>
+
+                <div class="col-md-8 podTags" id="transTags">
+                    <select class="custom-select form-control podT" id="transSel">
+                        <option value="" disabled selected>Более конкретнее..</option>
+                        <option value="TehSost">Техническое состояние</option>
+                        <option value="SanSost">Санитарное состояние</option>
+                        <option value="Ostanovki">Остановки</option>
+                        <option value="SostDorog">Состояние дорог</option>
+                        <option value="OtherTrans">Другое</option>
+                    </select>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <div class="custom-control custom-checkbox mb-3">
-                        <input type="checkbox" class="custom-control-input" id="tag3" name="tag3">
-                        <label class="custom-control-label" for="tag3">достаточно длинный Тег3</label>
+
+            <!--
+            <label for="seltag">Выберите наиболее подходящие области вашей проблемы:</label>
+            <div class="form-group" id="seltag">
+                <ul class="cboxtags">
+                    <li><input type="checkbox" id="checkboxOne" value=""><label for="checkboxOne">11111111</label></li>
+                    <li><input type="checkbox" id="checkboxTwo" value=""><label for="checkboxTwo">22222222222222</label>
+                    </li>
+                    <li><input type="checkbox" id="checkboxThree" value=""><label for="checkboxThree">33333333333</label>
+                    </li>
+                    <li><input type="checkbox" id="checkboxFour" value=""><label for="checkboxFour">444</label></li>
+                    <li><input type="checkbox" id="checkboxFive" value=""><label for="checkboxFive">55555555</label></li>
+                    <li><input type="checkbox" id="checkboxSix" value=""><label for="checkboxSix">6666666666</label></li>
+                    <li><input type="checkbox" id="checkboxSeven" value=""><label
+                            for="checkboxSeven">7777777777777777777777</label></li>
+                    <li><input type="checkbox" id="checkboxEight" value=""><label for="checkboxEight">8888</label></li>
+                    <li><input type="checkbox" id="checkboxNine" value=""><label
+                            for="checkboxNine">9999999999999999999</label></li>
+                    <li><input type="checkbox" id="checkboxTen" value=""><label
+                            for="checkboxTen">000000000000000000000000</label></li>
+                    <li class="ks-selected"><input type="checkbox" id="checkboxEleven" value=""><label for="checkboxEleven">121212121212</label>
+                    </li>
+                    <li><input type="checkbox" id="checkboxTwelve" value=""><label for="checkboxTwelve">32323232322</label>
+                    </li>
+                    <li><input type="checkbox" id="checkboxThirteen" value=""><label for="checkboxThirteen">434434</label>
+                    </li>
+                    <li><input type="checkbox" id="checkboxFourteen" value=""><label for="checkboxFourteen">556655655656565656565656565656565656</label>
+                    </li>
+                    <li><input type="checkbox" id="checkboxFifteen" value=""><label
+                            for="checkboxFifteen">7676766676767</label></li>
+                </ul>
+            </div>-->
+
+            <!--<label for="seltag">Выберите наиболее подходящую область вашей проблемы:</label>
+            <div id="seltag">
+                <div class="row">
+                    <div class="col">
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="tag1" name="tag1">
+                            <label class="custom-control-label" for="tag1">ЖКХ Тег1</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="tag2" name="tag2">
+                            <label class="custom-control-label" for="tag2"></label>
+                        </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="custom-control custom-checkbox mb-3">
-                        <input type="checkbox" class="custom-control-input" id="tag4" name="tag4">
-                        <label class="custom-control-label" for="tag4">Тег4</label>
+                <div class="row">
+                    <div class="col">
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="tag3" name="tag3">
+                            <label class="custom-control-label" for="tag3">достаточно длинный Тег3</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="tag4" name="tag4">
+                            <label class="custom-control-label" for="tag4">Тег4</label>
+                        </div>
                     </div>
                 </div>
+            </div> -->
+
+
+            <div class="form-group">
+                <label for="request">Ваша проблема:</label>
+                <textarea class="form-control inpt" rows="15" id="request"></textarea>
+                <small class="form-text text-muted">Длина текста должна быть не менее 30 символов.</small>
             </div>
-        </div> -->
+        </form>
 
+        <div id="backBtn" class="btn btn-outline-success float-left">Назад</div>
+        <div id="submitBtn" class="btn btn-outline-secondary disabledbutton float-right">Отправить</div>
 
-        <div class="form-group">
-            <label for="request">Ваша проблема:</label>
-            <textarea class="form-control inpt" rows="15" id="request" required></textarea>
-            <small class="form-text text-muted">Длина текста должна быть не менее 30 символов.</small>
-            <div class="valid-feedback">Тут все верно.</div>
-            <div class="invalid-feedback">Чтобы продолжить, вы должны хоть что-то написать.</div>
-        </div>
+    </div>
 
-        <button disabled id="submitBtn" class="btn btn-outline-secondary">Отправить</button>
-    </form>
-</div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script src=" app.js"></script>
-    <!--<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>-->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-            crossorigin="anonymous"></script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script src=" app.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <!--<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                crossorigin="anonymous"></script>-->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                crossorigin="anonymous"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src=" app.js"></script>
+
 </body>
 </html>
