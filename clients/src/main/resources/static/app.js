@@ -49,11 +49,11 @@ $(document).ready(function(){
           if( $("#adminDistrict").val() != null && $("#request").val().length > 30 && $("#tag").val() != null){
                 $("#submitBtn").removeClass("disabledbutton");
                 $("#submitBtn").removeClass("btn-outline-secondary");
-                $("#submitBtn").addClass("btn-success");
+                $("#submitBtn").addClass("btn-primary");
             }
           else{
                 $("#submitBtn").prop("disabled", true);
-                $("#submitBtn").removeClass("btn-success");
+                $("#submitBtn").removeClass("btn-primary");
                 $("#submitBtn").addClass("btn-outline-secondary");
           }
      });
