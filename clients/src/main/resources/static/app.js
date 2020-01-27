@@ -52,7 +52,7 @@ $(document).ready(function(){
                 $("#submitBtn").addClass("btn-primary");
             }
           else{
-                $("#submitBtn").prop("disabled", true);
+                //$("#submitBtn").prop("disabled", true);
                 $("#submitBtn").removeClass("btn-primary");
                 $("#submitBtn").addClass("btn-outline-secondary");
           }
@@ -84,7 +84,7 @@ $(document).ready(function(){
             });
         });
 
-    $('#submitBtn').on('click', function(){
+    $('#sendBtn').on('click', function(){
         console.log('clicked')
         var data = {
             district: $('#adminDistrict').val(),
