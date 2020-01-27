@@ -1,6 +1,7 @@
 package com.template.webserver
 
 
+import com.google.gson.GsonBuilder
 import com.template.flows.Initiator
 import com.template.states.TemplateState
 import net.corda.core.identity.CordaX500Name
@@ -8,13 +9,9 @@ import net.corda.core.identity.Party
 import net.corda.core.messaging.startFlow
 import net.corda.core.messaging.vaultQueryBy
 import net.corda.core.utilities.getOrThrow
-import net.corda.serialization.internal.model.TypeIdentifier
 import org.slf4j.LoggerFactory
-import org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration
-import org.springframework.http.MediaType.APPLICATION_JSON_VALUE
+import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.*
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
 
 
 /**
@@ -40,6 +37,12 @@ class Controller(rpc: NodeRPCConnection) {
     }
 
     private val proxy = rpc.proxy
+
+    @GetMapping("/greeting")
+    fun greeting(@RequestParam(name = "name", required = false, defaultValue = "World") name: String?, model: Model): String? {
+        model.addAttribute("name", name)
+        return "templates/greeting.html"
+    }
 
     @GetMapping(value = ["/getData"], produces = ["text/plain"])
     private fun getData(): String {
