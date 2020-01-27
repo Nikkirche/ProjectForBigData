@@ -29,5 +29,4 @@ window.onload = function () {
                                 td_dom = create('td',{},tr_dom,'')
                 })
         })
-console.log(inputTable)
      };
