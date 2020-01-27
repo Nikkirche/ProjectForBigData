@@ -229,12 +229,33 @@
         </form>
 
         <div id="backBtn" class="btn btn-outline-primary float-left">Назад</div>
-        <div id="submitBtn" class="btn btn-outline-secondary disabledbutton float-right">Отправить</div>
+        <button id="submitBtn" class="btn btn-outline-secondary float-right"
+                data-toggle="modal" data-target="#myModal">Отправить</button>
 
     </div>
 
-    <div id="uved" class="m-5 p-5 m-auto shadow rCornenrs clearfix bg-white" tabindex="-1" style="width : 200px">
-        dddddddddddddddddddddddddd
+<!--    <div id="uved" class="m-5 p-5 m-auto shadow rCornenrs clearfix bg-white" tabindex="-1" style="width : 200px">-->
+
+<!--    </div>-->
+
+    <div class="container">
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content mx-auto" style="width : 300px">
+                    <div class="modal-body">
+                        <p class="h3">Отправить форму?</p>
+                </div>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
+                    <button id="sendBtn" class="btn btn-primary" >Отправить</button>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

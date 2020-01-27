@@ -15,3 +15,7 @@ body {
 .clearfix {
   overflow: auto;
 }
+.modal-dialog {
+    position: absolute;
+    top: 30%;
+}
