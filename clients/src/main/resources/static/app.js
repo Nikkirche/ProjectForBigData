@@ -91,9 +91,8 @@ $(document).ready(function(){
             requestText: $('#request').val(),
             nadTag: $($('#seltag').find('div:visible select')[0]).val(),
             podTag: $($('#seltag').find('div:visible select')[1]).val()
-        }
-        alert(JSON.stringify(data))
-        postMethod('postData', data);
+        };
+        //postMethod('postData', data);
         var result = getMethod('getData');
         console.log(result)
 
