@@ -1,6 +1,4 @@
-body {
-  background-color: #F7F7F7;
-}
+
 .rCornenrs {
     border-radius: 10px;
 }
@@ -14,8 +12,4 @@ body {
 
 .clearfix {
   overflow: auto;
-}
-.modal-dialog {
-    position: absolute;
-    top: 30%;
 }
