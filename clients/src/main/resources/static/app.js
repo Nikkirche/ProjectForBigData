@@ -46,12 +46,12 @@ $(document).ready(function () {
     });
 
     $('.inpt').on('keyup change', function () {
-        if ($("#adminDistrict").val() != null && $("#request").val().length > 30 && $("#tag").val() != null) {
+        if ($("#adminDistrict").val() != null && $("#request").val().length > 1 && $("#tag").val() != null) {
             $("#submitBtn").removeClass("disabledbutton");
             $("#submitBtn").removeClass("btn-outline-secondary");
             $("#submitBtn").addClass("btn-primary");
         } else {
-            $("#submitBtn").prop("disabled", true);
+            $("#submitBtn").addClass("disabledbutton");
             $("#submitBtn").removeClass("btn-primary");
             $("#submitBtn").addClass("btn-outline-secondary");
         }
@@ -72,14 +72,14 @@ $(document).ready(function () {
     };
 
     $('#nextBtn').on('click', function () {
-        $("#privet").fadeOut(500, function () {
-            $("#forma").fadeIn(200);
+        $("#privet").fadeOut(300, function () {
+            $("#forma").fadeIn(100);
         });
     });
 
     $('#backBtn').on('click', function () {
-        $("#forma").fadeOut(500, function () {
-            $("#privet").fadeIn(200);
+        $("#forma").fadeOut(300, function () {
+            $("#privet").fadeIn(100);
         });
     });
 
@@ -94,7 +94,6 @@ $(document).ready(function () {
         //postMethod('postData', data);
         var result = getMethod('getData');
         console.log(result)
-
     })
 });
 
