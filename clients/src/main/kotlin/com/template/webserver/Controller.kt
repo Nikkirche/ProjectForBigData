@@ -24,11 +24,14 @@ import org.springframework.web.bind.annotation.*
 class Controller(rpc: NodeRPCConnection) {
     class Statements(
             val administration: String,
+            val field: String,
+            val subfield: String,
             val appereance: String,
             val appear: String
     ) {
         override fun toString(): String {
-            return "Category [Administration: ${this.administration}, Appereance: ${this.appereance}, Appear: ${this.appear}]"
+            return "Category [Administration: ${this.administration},Field: ${this.field},SubField: ${this.subfield} " +
+                    "Appereance: ${this.appereance}, Appear: ${this.appear}]"
         }
     }
 
@@ -46,13 +49,14 @@ class Controller(rpc: NodeRPCConnection) {
 
     @GetMapping(value = ["/getData"], produces = ["text/plain"])
     private fun getData(): String {
-        val data : List<Statements> = proxy.vaultQueryBy<TemplateState>().states.map {
-            Statements(it.state.data.administration.toString(), it.state.data.appearance.toString(), it.state.data.appear.substringAfter("&requestText="))
+        val data: List<Statements> = proxy.vaultQueryBy<TemplateState>().states.map {
+            Statements(it.state.data.administration.toString(),it.state.data.appear.substringBefore('#'),
+                       it.state.data.appear.substringBefore('.').substringAfter('#'),
+                       it.state.data.appearance.toString(), it.state.data.appear.substringAfter("&requestText="))
         }
         val gson = GsonBuilder().setPrettyPrinting().create()
         val dataResult: String = gson.toJson(data)
         println(dataResult)
-        //print("Admin: " + data[0][0] + "\n appeareance: " + data[0][1] + "\n appear: " + data[0][2] + "\n")
 
         return dataResult
     }
