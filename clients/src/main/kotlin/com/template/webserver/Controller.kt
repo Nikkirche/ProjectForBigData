@@ -52,7 +52,7 @@ class Controller(rpc: NodeRPCConnection) {
             Statements(
                     (it.state.data.appear.substringBefore("&requestText").substringAfter("district=")),it.state.data.appear.substringAfter("requestText="))
             //substringBefore('.').substringAfter('#'),
-            //,it.state.data.appearance.toString(), it.state.data.appear//.substringAfter("&requestText="))
+            //it.state.data.appearance.toString(), it.state.data.appear//.substringAfter("&requestText="))
         }
         val gson = GsonBuilder().setPrettyPrinting().create()
         val dataResult: String = gson.toJson(data)
