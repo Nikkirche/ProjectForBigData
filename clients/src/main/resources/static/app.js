@@ -84,14 +84,17 @@ $(document).ready(function () {
     });
 
     $('#submitBtn').on('click', function () {
+        console.log(JSON.stringify(data))
         console.log('clicked')
         var data = {
                 district: $('#adminDistrict').val(),
-                request: $($('#seltag').find('div:visible select')[0]).val()+$('#')+$($('#seltag').find('div:visible select')[1]).val()+$('.')+$('#request').val()
+                requestText: $('#request').val(),
+                //subfield: $($('#seltag').find('div:visible select')[0]).val()
+                //field: $($('#seltag').find('div:visible select')[1]).val
 
             }
         ;
-        //postMethod('postData', data);
+        postMethod('postData', data);
         var result = getMethod('getData');
         console.log(result)
 
