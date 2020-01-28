@@ -24,14 +24,13 @@ import org.springframework.web.bind.annotation.*
 class Controller(rpc: NodeRPCConnection) {
     class Statements(
             val administration: String,
-            val field: String,
-            val subfield: String,
-            val appereance: String,
+            //val field: String,
+            //val subfield: String,
             val appear: String
     ) {
         override fun toString(): String {
-            return "Category [Administration: ${this.administration},Field: ${this.field},SubField: ${this.subfield} " +
-                    "Appereance: ${this.appereance}, Appear: ${this.appear}]"
+            return "Category [Administration: ${this.administration}, + Appear: ${this.appear} "
+                    //Field:${this.field}, + SubField: ${this.subfield} ]"
         }
     }
 
@@ -50,9 +49,10 @@ class Controller(rpc: NodeRPCConnection) {
     @GetMapping(value = ["/getData"], produces = ["text/plain"])
     private fun getData(): String {
         val data: List<Statements> = proxy.vaultQueryBy<TemplateState>().states.map {
-            Statements(it.state.data.administration.toString(),it.state.data.appear.substringBefore('#'),
-                       it.state.data.appear.substringBefore('.').substringAfter('#'),
-                       it.state.data.appearance.toString(), it.state.data.appear.substringAfter("&requestText="))
+            Statements(it.state.data.administration.toString(),//it.state.data.appear.substringBefore('#'),
+                    it.state.data.appear.substringAfter("requestText\\u003d").substringBefore('"'))
+            //substringBefore('.').substringAfter('#'),
+            //,it.state.data.appearance.toString(), it.state.data.appear//.substringAfter("&requestText="))
         }
         val gson = GsonBuilder().setPrettyPrinting().create()
         val dataResult: String = gson.toJson(data)
@@ -64,6 +64,7 @@ class Controller(rpc: NodeRPCConnection) {
     @PostMapping(value = ["/postData"], produces = ["text/plain"])
     private fun postData(@RequestBody text: String) {
         val administration = CordaX500Name.parse("O=PartyB,L=New York,C=US")
+        println(text)
         val party: Party = proxy.wellKnownPartyFromX500Name(administration)!!
         proxy.startFlow(::Initiator, text, party).returnValue.getOrThrow()
     }
