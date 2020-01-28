@@ -87,10 +87,10 @@ $(document).ready(function () {
         console.log(JSON.stringify(data))
         console.log('clicked')
         var data = {
-                district: $('#adminDistrict').val(),
+            district: $('#adminDistrict').val(),
                 requestText: $('#request').val(),
                 //subfield: $($('#seltag').find('div:visible select')[0]).val()
-                //field: $($('#seltag').find('div:visible select')[1]).val
+            //                 //field: $($('#seltag').find('div:visible select')[1]).val
 
             }
         ;

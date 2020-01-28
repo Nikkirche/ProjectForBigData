@@ -49,8 +49,8 @@ class Controller(rpc: NodeRPCConnection) {
     @GetMapping(value = ["/getData"], produces = ["text/plain"])
     private fun getData(): String {
         val data: List<Statements> = proxy.vaultQueryBy<TemplateState>().states.map {
-            Statements(it.state.data.administration.toString(),//it.state.data.appear.substringBefore('#'),
-                    it.state.data.appear.substringAfter("requestText\\u003d").substringBefore('"'))
+            Statements(
+                    (it.state.data.appear.substringBefore("\\u0026").substringAfter("district\\u003d")),it.state.data.appear.substringAfter("requestText\\u003d"))
             //substringBefore('.').substringAfter('#'),
             //,it.state.data.appearance.toString(), it.state.data.appear//.substringAfter("&requestText="))
         }
