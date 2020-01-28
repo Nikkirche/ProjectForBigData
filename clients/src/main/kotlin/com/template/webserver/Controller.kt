@@ -50,7 +50,7 @@ class Controller(rpc: NodeRPCConnection) {
     private fun getData(): String {
         val data: List<Statements> = proxy.vaultQueryBy<TemplateState>().states.map {
             Statements(
-                    (it.state.data.appear.substringBefore("\\u0026").substringAfter("district\\u003d")),it.state.data.appear.substringAfter("requestText\\u003d"))
+                    (it.state.data.appear.substringBefore("requestText").substringAfter("district\\u003d")),it.state.data.appear.substringAfter("requestText\\u003d"))
             //substringBefore('.').substringAfter('#'),
             //,it.state.data.appearance.toString(), it.state.data.appear//.substringAfter("&requestText="))
         }
