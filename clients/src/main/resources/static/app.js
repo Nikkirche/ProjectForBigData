@@ -1,6 +1,6 @@
 "use strict";
 // Define your client-side logic here.
-$(document).ready(function(){
+$(document).ready(function () {
 
     $("#jkhTags").hide();
     $("#blagoTags").hide();
@@ -8,8 +8,8 @@ $(document).ready(function(){
     $("#transTags").hide();
     $("#forma").hide();
 
-    $("#tag").on("change", function(){
-        switch( $("#tag").val() ) {
+    $("#tag").on("change", function () {
+        switch ($("#tag").val()) {
             case "JKH":
                 $("#tagSelect").removeClass("col-md-12");
                 $("#tagSelect").addClass("col-md-4");
@@ -45,53 +45,52 @@ $(document).ready(function(){
         }
     });
 
-     $('.inpt').on('keyup change', function(){
-          if( $("#adminDistrict").val() != null && $("#request").val().length > 30 && $("#tag").val() != null){
-                $("#submitBtn").removeClass("disabledbutton");
-                $("#submitBtn").removeClass("btn-outline-secondary");
-                $("#submitBtn").addClass("btn-primary");
-            }
-          else{
-                $("#submitBtn").prop("disabled", true);
-                $("#submitBtn").removeClass("btn-primary");
-                $("#submitBtn").addClass("btn-outline-secondary");
-          }
-     });
+    $('.inpt').on('keyup change', function () {
+        if ($("#adminDistrict").val() != null && $("#request").val().length > 30 && $("#tag").val() != null) {
+            $("#submitBtn").removeClass("disabledbutton");
+            $("#submitBtn").removeClass("btn-outline-secondary");
+            $("#submitBtn").addClass("btn-primary");
+        } else {
+            $("#submitBtn").prop("disabled", true);
+            $("#submitBtn").removeClass("btn-primary");
+            $("#submitBtn").addClass("btn-outline-secondary");
+        }
+    });
 
-    function getMethod(address){
+    function getMethod(address) {
         $.get(`/${address}`,  // url
-          function (data, textStatus, jqXHR) {  // success callback
-              console.log('status: ' + textStatus + ', data:' + data);
-        });
+            function (data, textStatus, jqXHR) {  // success callback
+                console.log('status: ' + textStatus + ', data:' + data);
+            });
     };
 
-    function postMethod(address, data){
+    function postMethod(address, data) {
         $.post(`/${address}`, data)
-          .done(function( requestData ) {
-            alert( "Data Loaded: " + requestData );
-          });
+            .done(function (requestData) {
+                alert("Data Loaded: " + requestData);
+            });
     };
 
-    $('#nextBtn').on('click', function(){
-        $("#privet").fadeOut(500, function(){
+    $('#nextBtn').on('click', function () {
+        $("#privet").fadeOut(500, function () {
             $("#forma").fadeIn(200);
         });
     });
 
-    $('#backBtn').on('click', function(){
-            $("#forma").fadeOut(500, function(){
-                $("#privet").fadeIn(200);
-            });
+    $('#backBtn').on('click', function () {
+        $("#forma").fadeOut(500, function () {
+            $("#privet").fadeIn(200);
         });
+    });
 
-    $('#submitBtn').on('click', function(){
+    $('#submitBtn').on('click', function () {
         console.log('clicked')
         var data = {
-            district: $('#adminDistrict').val(),
-            requestText: $('#request').val(),
-            nadTag: $($('#seltag').find('div:visible select')[0]).val(),
-            podTag: $($('#seltag').find('div:visible select')[1]).val()
-        };
+                district: $('#adminDistrict').val(),
+                request: $($('#seltag').find('div:visible select')[0]).val()+$('#')+$($('#seltag').find('div:visible select')[1]).val()+$('.')+$('#request').val()
+
+            }
+        ;
         //postMethod('postData', data);
         var result = getMethod('getData');
         console.log(result)
