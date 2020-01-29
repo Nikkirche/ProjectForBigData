@@ -14,10 +14,10 @@ function create(t,attr,parent_node,innerdata){
         });
     };
 window.onload = function () {
-       // var d = getMethod('getData');
+       var d = getMethod('getData');
        // var d = require('./ok.json');
 
-       $.getJSON("./ok.json", function(json) {
+       //$.getJSON("./ok.json", function(json) {
            console.log(json);
            var tb= document.getElementById('inputTable')
            f = {"id":1,"administration":1,"filled":1,"subfilled":1,"appear":1,"date":1}
