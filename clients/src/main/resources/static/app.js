@@ -46,7 +46,7 @@ $(document).ready(function () {
     });
 
     $('.inpt').on('keyup change', function () {
-        if ($("#adminDistrict").val() != null && $("#request").val().length > 1 && $("#tag").val() != null) {
+        if ($("#adminDistrict").val() != null && $("#request").val().length > 30 && $("#tag").val() != null) {
             $("#submitBtn").removeClass("disabledbutton");
             $("#submitBtn").removeClass("btn-outline-secondary");
             $("#submitBtn").addClass("btn-primary");
@@ -61,6 +61,7 @@ $(document).ready(function () {
         $.get(`/${address}`,  // url
             function (data, textStatus, jqXHR) {  // success callback
                 console.log('status: ' + textStatus + ', data:' + data);
+                $('#myModal').modal('show')//показывает уведомление
             });
     };
 
@@ -72,6 +73,7 @@ $(document).ready(function () {
     };
 
     $('#nextBtn').on('click', function () {
+        //$('#myModal').modal('show') для теста уведомления
         $("#privet").fadeOut(300, function () {
             $("#forma").fadeIn(100);
         });

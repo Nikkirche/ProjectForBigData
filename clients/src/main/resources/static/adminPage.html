@@ -6,13 +6,14 @@
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
           crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
-<table id="dtMaterialDesignExample" class="table table-striped" cellspacing="0" width="100%">
+<table id="dtMaterialDesignExample" class="table table-hover table-sm table-striped table-bordered" cellspacing="0" width="100%">
     <thead>
     <tr>
         <th class="th-sm">id
@@ -21,27 +22,85 @@
         </th>
         <th class="th-sm">Область проблемы
         </th>
-        <th class="th-sm">подобласть проблемы
+        <th class="th-sm">Подобласть проблемы
         </th>
-        <th class="th-sm">проблема
+        <th class="th-sm">Проблема
         </th>
-        <th class="th-sm">дата
+        <th class="th-sm">Дата
         </th>
     </tr>
     </thead>
     <tbody id="inputTable">
+    <div class="font-weight-normal">
+        <tr>
+            <th>1</th>
+            <th>Василеостровский район</th>
+            <th>Благоустройство</th>
+            <th>Провода на зданиях</th>
+            <th>На фасаде со стороны Обводного канала,
+                с крыши вдоль водосточной трубы болтается
+                провод, требуется демонтировать.</th>
+            <th>31.01.2020</th>
+        </tr>
+        <tr>
+            <th>2</th>
+            <th>Выборгский район</th>
+            <th>Общественный транспорт</th>
+            <th>Техническое состояние</th>
+            <th>Трамвайный вагон 3462, маршрут 38.
+                - правый софит не соответствует номеру маршрута (38 – синий, жёлтый)
+                - ящик у кабины закреплён колхозно
+                - сильно гремят тележки</th>
+            <th>29.01.2020</th>
+        </tr>
+        <tr>
+            <th>3</th>
+            <th>Пушкинский район</th>
+            <th>Благоустройсво</th>
+            <th>Неубранный снег</th>
+            <th>Лёд (толстый слой)на спуске на пешеходный переход
+                к входу в Институт травматологии и ортопедии им.
+                Р.Р.Вредена</th>
+            <th>25.01.2020</th>
+        </tr>
+        <tr>
+            <th>4</th>
+            <th>Центральный район</th>
+            <th>ЖКХ</th>
+            <th>Вывоз мусора</th>
+            <th>Добрый день!
+                Мусоросборная Камера возле парадной 8 по адресу
+                Загородная 43/3 не содержится в надлежащем порядке.
+                Пол в камере грязный, уже долгое время стоит
+                крупногабаритный мусор, а также мешки с песком.
+                Необходима уборка мусоросборной камеры согласно
+                санитарным нормам и правилам.</th>
+            <th>01.2.2020</th>
+        </tr>
+        <tr>
+            <th>5</th>
+            <th>Невский район</th>
+            <th>Общественный транспорт</th>
+            <th>Состояние дорог</th>
+            <th>Провалилось асфальтовое покрыти.
+                Возле дома Дальневосточный 25, правая полоса
+                после светофора и пешеходного перехода в сторону
+                ул. Дыбенко.</th>
+            <th>23.01.2020</th>
+        </tr>
+    </div>
 
     </tbody>
-    <tfoot>
-    <tr>
-        <th>id</th>
-        <th>Район</th>
-        <th>Область проблемы</th>
-        <th>Подобласть проблемы</th>
-        <th>Проблема</th>
-        <th>дата</th>
-    </tr>
-    </tfoot>
+<!--    <tfoot>-->
+<!--    <tr>-->
+<!--        <th>id</th>-->
+<!--        <th>Район</th>-->
+<!--        <th>Область проблемы</th>-->
+<!--        <th>Подобласть проблемы</th>-->
+<!--        <th>Проблема</th>-->
+<!--        <th>дата</th>-->
+<!--    </tr>-->
+<!--    </tfoot>-->
 </table>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -53,8 +112,9 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
 <script src="data.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
 
 </body>
 </html>

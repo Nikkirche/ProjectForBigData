@@ -1,3 +1,10 @@
+"use strict";
+$(document).ready( function () {
+    $('#example').dataTable( {
+    "pagingType": "scrolling"
+    } );
+} );
+
 function create(t,attr,parent_node,innerdata){
                 var dom = document.createElement(t)
                 for(key in attr){
@@ -30,8 +37,8 @@ window.onload = function () {
                                 td_dom = create('td',{},tr_dom,'')
                 })
             })
-        });
-     };
+        };
+
 $(document).ready(function () {
   $('#dtMaterialDesignExample').DataTable();
   $('#dtMaterialDesignExample_wrapper').find('label').each(function () {

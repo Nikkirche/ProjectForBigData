@@ -11,5 +11,31 @@
 }
 
 .clearfix {
-  overflow: auto;
+   overflow: auto;
+ }
+.dataTables_length {
+    padding-top: 20px;
+    padding-left: 20px;
+ }
+.dataTables_filter {
+    padding-top: 20px;
+    padding-right: 20px;
 }
+.dataTables_info {
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.dataTables_paginate {
+    padding-top: 20px;
+    padding-right: 20px;
+}
+#successText {
+    font-size: 20px;
+}
+.close {
+        margin-top: 12px;
+        margin-right: 15px;
+
+		text-shadow: none;
+		opacity: 0.5;
+	}
