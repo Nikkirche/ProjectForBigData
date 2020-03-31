@@ -38,4 +38,10 @@
 
 		text-shadow: none;
 		opacity: 0.5;
-	}
+}
+.window {
+    background-color: #2c2f33;
+}
+.window1 {
+    background-color: #EAEAEA;
+}

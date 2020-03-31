@@ -7,6 +7,7 @@ $(document).ready(function () {
     $("#illegalTags").hide();
     $("#transTags").hide();
     $("#forma").hide();
+    //var response = grecaptcha.getResponse();
 
     $("#tag").on("change", function () {
         switch ($("#tag").val()) {
@@ -45,17 +46,7 @@ $(document).ready(function () {
         }
     });
 
-    $('.inpt').on('keyup change', function () {
-        if ($("#adminDistrict").val() != null && $("#request").val().length > 30 && $("#tag").val() != null) {
-            $("#submitBtn").removeClass("disabledbutton");
-            $("#submitBtn").removeClass("btn-outline-secondary");
-            $("#submitBtn").addClass("btn-primary");
-        } else {
-            $("#submitBtn").addClass("disabledbutton");
-            $("#submitBtn").removeClass("btn-primary");
-            $("#submitBtn").addClass("btn-outline-secondary");
-        }
-    });
+
 
     function getMethod(address) {
         $.get(`/${address}`,  // url
@@ -100,7 +91,35 @@ $(document).ready(function () {
         var result = getMethod('getData');
         console.log(result)
     })
+
+
+
+    /*// implement on the backend
+    function backend_API_challenge() {
+        $.ajax({
+            type: "POST",
+            url: 'https://www.google.com/recaptcha/api/siteverify',
+            data: {"secret" : "6Lczi-UUAAAAAPaCIUsKZdk_VK3CrVSQboH4OIcz", "response" : response, "remoteip":"localhost"},
+            contentType: 'application/x-www-form-urlencoded',
+            success: function(data) { console.log(data); }
+        });
+    }*/
+
+
+
+
 });
 
-
-
+var validation = function() {
+        if ($("#adminDistrict").val() != null && $("#request").val().length > 30 && $("#tag").val() != null
+         && grecaptcha.getResponse().length != 0) {
+            $("#submitBtn").removeClass("disabledbutton");
+            $("#submitBtn").removeClass("btn-outline-secondary");
+            $("#submitBtn").addClass("btn-primary");
+        } else {
+            $("#submitBtn").addClass("disabledbutton");
+            $("#submitBtn").removeClass("btn-primary");
+            $("#submitBtn").addClass("btn-outline-secondary");
+        }
+}
+$('.inpt').on('keyup change', validation);
