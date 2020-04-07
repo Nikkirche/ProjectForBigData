@@ -10,13 +10,45 @@
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
           crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+          crossorigin="anonymous">
 </head>
-
 <body class="window1">
-    <div id="privet" class="m-5 p-5 mx-auto rCornenrs clearfix bg-white" style="width : 500px">
+    <div id="low-visionBtnPanel" class="dropdown">
+        <button type="button"  id="low-visionBtn" class="dropdown-toggle"
+             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="far fa-eye"></i>
+            Версия для слабовидящих
+        </button>
+        <div id="low-visionMenu" class="dropdown-menu dropdown-menu-right shadow"
+             aria-labelledby="low-visionBtnPanel">
+            <div id="fontColorMenu">
+                <p>Цветовая схема</p><br>
+                <button id="Color-n">Обычная</button>
+                <button id="Color-contrast">Контрастная</button>
+            </div><hr>
+            <div  id="stringSpacingMenu">
+                <p>Расстояние между строками</p><br>
+                <button id="stringSpacing-n">Обычное</button>
+                <button id="stringSpacing-l">Большое</button>
+                <button id="stringSpacing-s">Маленькое</button>
+            </div><hr>
+            <div id="letterSpacingMenu">
+                <p>Расстояние между буквами</p><br>
+                <button id="letterSpacing-n">Обычное</button>
+                <button id="letterSpacing-l">Большое</button>
+                <button id="letterSpacing-xl">Очень большое</button>
+            </div><hr>
+            <div id="fontMenu">
+                <p>Шрифт</p><br>
+                <button id="font-T">Tahoma</button>
+                <button id="font-TNR">Times New Roman</button>
+            </div>
+        </div>
+    </div>
+    <div id="privet" class="bg-white window clearfix">
         <div class="mb-5">
-            <p class="h1 font-weight-bold gl">Реестр городских проблем</p>
+            <p class="h1 font-weight-bold">Реестр городских проблем</p>
         </div>
         <div>
             <p class="gl">
@@ -35,16 +67,16 @@
                 законы РФ — не учитываются.</p>
         </div>
 
-        <div id="nextBtn" class="btn btn-primary text-center mt-3">Заявить о проблеме</div>
+        <button id="nextBtn" class="btn btn-primary text-center mt-3">Заявить о проблеме</button>
     </div>
 
-    <div id="forma" class="clearfix m-5 p-5 mx-auto rCornenrs bg-white" style="width : 500px">
+    <div id="forma" class="window bg-white  clearfix">
         <p class="h3">Заполните форму:</p><br>
         <form action="">
             <div class="form-group">
                 <label for="adminDistrict">Район администрации:</label>
                 <select class="custom-select inpt" id="adminDistrict">
-                    <option disabled selected value="">Выберите район...</option>
+                    <option value="" disabled selected>Выберите район...</option>
                     <option value="Admiralteyskiy">Адмиралтейский район</option>
                     <option value="Vasileostrovskiy">Василеостровский район</option>
                     <option value="Viborgskiy">Выборгский район</option>
@@ -67,8 +99,8 @@
             </div>
             <div class="form-group">
                 <label for="tagSelect">Область вашей проблемы:</label>
-                <div class="form-row" id="seltag">
-                    <div id="tagSelect" class="col-md-12">
+                <div id="seltag">
+                    <div id="tagSelect">
                         <select class="custom-select form-control inpt" id="tag">
                             <option value="" disabled selected>Выберите..</option>
                             <option value="JKH">ЖКХ</option>
@@ -79,7 +111,7 @@
                         </select>
                     </div>
 
-                    <div class="col-md-8 podTags" id="jkhTags">
+                    <div class="podTags" id="jkhTags">
                         <select class="custom-select form-control podT" id="jkhSel">
                             <option value="" disabled selected>Более конкретнее..</option>
                             <option value="ElectroSnab">Электроснабжение</option>
@@ -103,7 +135,7 @@
                         </select>
                     </div>
 
-                    <div class="col-md-8 podTags" id="blagoTags">
+                    <div class="podTags" id="blagoTags">
                         <select class="custom-select form-control podT" id="blagoSel">
                             <option value="" disabled selected>Более конкретнее..</option>
                             <option value="UlitizaciaBO">Утилизация бытовых отходов</option>
@@ -122,7 +154,7 @@
                             <option value="OtherBlago">Другое</option>
                         </select>
                     </div>
-                    <div class="col-md-8 podTags" id="illegalTags">
+                    <div class="podTags" id="illegalTags">
                         <select class="custom-select form-control podT" id="illegalSel">
                             <option value="" disabled selected>Более конкретнее..</option>
                             <option value="NezStroitelstvo">Незаконное строительство</option>
@@ -132,7 +164,7 @@
                         </select>
                     </div>
 
-                    <div class="col-md-8 podTags" id="transTags">
+                    <div class="podTags" id="transTags">
                         <select class="custom-select form-control podT" id="transSel">
                             <option value="" disabled selected>Более конкретнее..</option>
                             <option value="TehSost">Техническое состояние</option>
@@ -147,38 +179,43 @@
             <div class="form-group">
                 <label for="request">Ваша проблема:</label>
                 <textarea class="form-control inpt" rows="10" id="request"></textarea>
-                <small class="form-text text-muted">Длина текста должна быть не менее 30 символов.</small>
+                <small class="form-text">Длина текста должна быть не менее 30 символов.</small>
             </div>
-            <div class="g-recaptcha my-4" data-callback="validation" data-sitekey="6Lczi-UUAAAAAE1SqkIPffHcywysTWBniuHPzsbi"></div>
-
+            <div class="g-recaptcha my-4" data-callback="validation"
+                 data-sitekey="6Lczi-UUAAAAAE1SqkIPffHcywysTWBniuHPzsbi"></div>
+            <div class="buttons">
+                <div tabindex="0" id="backBtn" class="btn btn-outline-primary float-left">Назад</div>
+                <div id="submitBtn" class="disabledbutton btn btn-outline-secondary float-right"
+                        onclick="checkRecaptcha();">Отправить</div>
+            </div>
         </form>
-
-        <div id="backBtn" class="btn btn-outline-primary float-left">Назад</div>
-        <div id="submitBtn" class="disabledbutton btn btn-outline-secondary float-right" onclick="checkRecaptcha();">Отправить</div>
 
         <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-sm " role="document">
                 <div class="modal-content">
                     <div>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true" onClick="grecaptcha.reset();">&times;</span>
+                            <span aria-hidden="true" id="close">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <div class="icon-box text-center m-4">
-                            <i class="fas fa-check-circle fa-5x text-primary"></i>
+                            <i class="fas fa-check-circle fa-5x"></i>
                         </div>
                         <p id="successText" class="text-center">Ваша проблема успешно отправлена</p>
                     </div>
 
-                    <button type="button" class="btn btn-primary m-3" data-dismiss="modal" onClick="window.location.reload();">
+                    <button type="button" class="btn btn-primary m-3" data-dismiss="modal"
+                            id="backToMainBtn" onClick="window.location.reload();">
                         Вернуться на главную</button>
                 </div>
             </div>
         </div>
-
     </div>
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
         <!--<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -188,7 +225,7 @@
                 integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
                 crossorigin="anonymous"></script>
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-        <script src=" app.js"></script>
+        <script src="app.js"></script>
 
 </body>
 </html>
